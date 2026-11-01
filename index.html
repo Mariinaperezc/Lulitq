@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mamma Mia! | Our Little Paradise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --blue: #277caa;
+    --darkblue: #174e70;
+    --lightblue: #d9eff5;
+    --cream: #fff9ed;
+    --yellow: #f6d36b;
+    --pink: #edaaa7;
+    --green: #668d72;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--darkblue);
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* INTRO */
+
+.intro {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: linear-gradient(145deg, #d8eff4, #fff9ed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    transition: opacity 1s, visibility 1s;
+}
+
+.intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.postcard {
+    background: #fffdf7;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 25px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 15px 50px #174e7020;
+    transform: rotate(-2deg);
+    animation: postcard 2s ease infinite alternate;
+}
+
+@keyframes postcard {
+    from { transform: rotate(-2deg) translateY(0); }
+    to { transform: rotate(1deg) translateY(-8px); }
+}
+
+.stamp {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.postcard small {
+    letter-spacing: 4px;
+    color: var(--blue);
+    font-size: 10px;
+}
+
+.postcard h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin: 20px 0;
+}
+
+.postcard p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #637b85;
+    margin-bottom: 25px;
+}
+
+.primary-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    background: var(--darkblue);
+    transform: scale(1.05);
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff9edee;
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--darkblue);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+    color: var(--darkblue);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(#174e7040, #174e7060),
+        url('https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1800')
+        center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(35px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero small {
+    letter-spacing: 6px;
+    font-size: 11px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(55px, 11vw, 105px);
+    line-height: 1.05;
+    margin: 25px 0;
+}
+
+.hero h1 span {
+    color: var(--yellow);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 25px;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading small {
+    color: var(--blue);
+    letter-spacing: 4px;
+    font-size: 10px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 6vw, 55px);
+    margin-top: 15px;
+}
+
+.section-heading p {
+    margin-top: 15px;
+    color: #71858c;
+    font-size: 14px;
+}
+
+/* INTRODUCTION */
+
+.welcome {
+    background: var(--cream);
+    text-align: center;
+}
+
+.welcome-text {
+    max-width: 700px;
+    margin: auto;
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    line-height: 1.9;
+}
+
+.welcome-text span {
+    color: var(--blue);
+    font-style: italic;
+}
+
+/* MEMORIES */
+
+.memories {
+    background: var(--lightblue);
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.memory-card {
+    background: white;
+    padding: 12px;
+    box-shadow: 0 10px 25px #174e7010;
+    transition: .4s;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.memory-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin: 17px 5px 8px;
+}
+
+.memory-card p {
+    color: #71858c;
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0 5px 15px;
+}
+
+/* WHY YOU */
+
+.why {
+    background: white;
+}
+
+.reasons {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.reason {
+    padding: 30px;
+    background: var(--cream);
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.reason:hover {
+    transform: scale(1.03);
+    background: var(--lightblue);
+}
+
+.reason .emoji {
+    font-size: 30px;
+}
+
+.reason h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.reason p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #71858c;
+}
+
+/* MUSIC */
+
+.music {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+}
+
+.music .section-heading small {
+    color: var(--yellow);
+}
+
+.music .section-heading p {
+    color: #e0eff5;
+}
+
+.music-circle {
+    width: 160px;
+    height: 160px;
+    border: 2px solid #ffffff80;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    font-size: 65px;
+    animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+    to { transform: rotate(360deg); }
+}
+
+.song-list {
+    max-width: 500px;
+    margin: auto;
+}
+
+.song {
+    padding: 17px;
+    border-bottom: 1px solid #ffffff40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    font-size: 13px;
+}
+
+.song span {
+    color: var(--yellow);
+}
+
+/* ISLAND */
+
+.island {
+    background:
+    linear-gradient(#fff9edbb, #fff9eddd),
+    url('https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1800')
+    center/cover fixed;
+}
+
+.island-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.island-card {
+    background: white;
+    padding: 35px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 30px #174e7020;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.island-card:hover {
+    transform: translateY(-8px);
+    background: var(--lightblue);
+}
+
+.island-card div {
+    font-size: 45px;
+}
+
+.island-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 15px;
+}
+
+.island-card p {
+    font-size: 11px;
+    color: #71858c;
+    margin-top: 8px;
+}
+
+.surprise-message {
+    display: none;
+    max-width: 550px;
+    margin: 30px auto 0;
+    padding: 30px;
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.7;
+    box-shadow: 0 10px 30px #174e7020;
+}
+
+.surprise-message.show {
+    display: block;
+    animation: appear .5s;
+}
+
+/* FINAL LETTER */
+
+.final {
+    background: var(--lightblue);
+    text-align: center;
+}
+
+.letter {
+    max-width: 650px;
+    margin: auto;
+    background: #fffdf7;
+    padding: 55px 35px;
+    box-shadow: 0 15px 50px #174e7020;
+    transform: rotate(-1deg);
+}
+
+.letter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+.letter p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    line-height: 2;
+    color: #607781;
+    white-space: pre-line;
+}
+
+.letter .signature {
+    color: var(--blue);
+    font-size: 24px;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--darkblue);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    color: var(--pink);
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background: var(--cream);
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-card img {
+        height: 300px;
+    }
+
+    .reasons {
+        grid-template-columns: 1fr;
+    }
+
+    .island-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        padding: 75px 7%;
+    }
+
+    .letter {
+        padding: 40px 22px;
+    }
+
+    .letter h2 {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 380px) {
+    .island-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* HEARTS */
+
+.heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    animation: floatHeart 3s forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) rotate(40deg);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- INVITATION -->
+
+<div class="intro" id="intro">
+
+    <div class="postcard">
+
+        <div class="stamp">🇬🇷</div>
+
+        <small>A SPECIAL INVITATION</small>
+
+        <h1>Mamma Mia!</h1>
+
+        <p>
+            Somewhere in the Mediterranean,<br>
+            there's a little island waiting for you.<br><br>
+
+            And someone has prepared something special...
+        </p>
+
+        <button class="primary-btn" onclick="openInvitation()">
+            OPEN YOUR INVITATION ♥
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">Mamma Mia! ♡</div>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">HOME</a>
+        <a href="#memories">MEMORIES</a>
+        <a href="#why">WHY YOU</a>
+        <a href="#music">MUSIC</a>
+        <a href="#island">ISLAND</a>
+        <a href="#letter">LETTER</a>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+    <div class="hero-content">
+
+        <small>WELCOME TO OUR LITTLE PARADISE</small>
+
+        <h1>
+            Mamma <span>Mia!</span>
+        </h1>
+
+        <p>
+            SUNSHINE · LOVE · MUSIC · YOU
+        </p>
+
+        <a href="#welcome">
+            <button class="primary-btn">
+                DISCOVER OUR ISLAND ↓
+            </button>
+        </a>
+
+    </div>
+
+    <div class="scroll">SCROLL TO EXPLORE ↓</div>
+
+</header>
+
+
+<!-- WELCOME -->
+
+<section class="welcome" id="welcome">
+
+    <div class="section-heading">
+
+        <small>AN ISLAND CALLED US</small>
+
+        <h2>Our little paradise</h2>
+
+    </div>
+
+    <div class="welcome-text">
+
+        They say that somewhere in Greece,
+        surrounded by crystal-clear water,
+        sunshine and music,
+        there's a place where everything feels perfect.
+
+        <br><br>
+
+        But I think I've already found mine.
+
+        <br><br>
+
+        <span>It's wherever I am with you.</span>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section class="memories" id="memories">
+
+    <div class="section-heading">
+
+        <small>CHAPTER ONE</small>
+
+        <h2>Our memories</h2>
+
+        <p>Some moments deserve to last forever.</p>
+
+    </div>
+
+    <div class="memory-grid">
+
+        <div class="memory-card">
+
+            <img src="fotos/foto1.jpg" alt="Nuestro recuerdo">
+
+            <h3>Our beginning</h3>
+
+            <p>
+                Aquí puedes escribir algo sobre
+                vuestro comienzo.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <img src="fotos/foto2.jpg" alt="Un recuerdo juntas">
+
+            <h3>Little adventures</h3>
+
+            <p>
+                Todos esos momentos que hacen
+                que nuestra historia sea única.
+            </p>
+
+        </div>
+
+        <div class="memory-card">
+
+            <img src="fotos/foto3.jpg" alt="Nuestro momento">
+
+            <h3>My favourite person</h3>
+
+            <p>
+                Mi parte favorita de cualquier
+                día siempre acaba siendo tú.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY YOU -->
+
+<section class="why" id="why">
+
+    <div class="section-heading">
+
+        <small>CHAPTER TWO</small>
+
+        <h2>Why you?</h2>
+
+        <p>There are a million reasons. Here are just a few.</p>
+
+    </div>
+
+    <div class="reasons">
+
+        <div class="reason">
+
+            <div class="emoji">☀️</div>
+
+            <h3>Your smile</h3>
+
+            <p>
+                Porque tienes esa capacidad de
+                hacer que hasta los días más normales
+                se conviertan en algo especial.
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <div class="emoji">🌊</div>
+
+            <h3>Your way of being</h3>
+
+            <p>
+                Porque no necesito que seas nadie
+                más. Me encanta la persona que eres.
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <div class="emoji">💙</div>
+
+            <h3>The little things</h3>
+
+            <p>
+                Por los pequeños detalles,
+                las tonterías, las miradas y
+                todas nuestras bromas.
+            </p>
+
+        </div>
+
+        <div class="reason">
+
+            <div class="emoji">✨</div>
+
+            <h3>Our story</h3>
+
+            <p>
+                Porque si tuviera que volver a
+                empezar nuestra historia,
+                volvería a elegirte.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section class="music" id="music">
+
+    <div class="section-heading">
+
+        <small>CHAPTER THREE</small>
+
+        <h2>Thank you for the music</h2>
+
+        <p>Because every great love story deserves a soundtrack.</p>
+
+    </div>
+
+    <div class="music-circle">♫</div>
+
+    <div class="song-list">
+
+        <div class="song">
+            Dancing Queen <span>ABBA ♡</span>
+        </div>
+
+        <div class="song">
+            Mamma Mia <span>ABBA ♡</span>
+        </div>
+
+        <div class="song">
+            Lay All Your Love on Me <span>ABBA ♡</span>
+        </div>
+
+        <div class="song">
+            Super Trouper <span>ABBA ♡</span>
+        </div>
+
+        <div class="song">
+            I Have a Dream <span>ABBA ♡</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ISLAND -->
+
+<section class="island" id="island">
+
+    <div class="section-heading">
+
+        <small>CHAPTER FOUR</small>
+
+        <h2>Explore our island</h2>
+
+        <p>
+            There are little secrets hidden around here.
+            Tap on each place to discover them.
+        </p>
+
+    </div>
+
+    <div class="island-grid">
+
+        <div class="island-card" onclick="showSurprise(1)">
+            <div>🏡</div>
+            <h3>The little house</h3>
+            <p>A little secret awaits...</p>
+        </div>
+
+        <div class="island-card" onclick="showSurprise(2)">
+            <div>🏖️</div>
+            <h3>The beach</h3>
+            <p>Something to remember...</p>
+        </div>
+
+        <div class="island-card" onclick="showSurprise(3)">
+            <div>🌺</div>
+            <h3>The garden</h3>
+            <p>Open your surprise...</p>
+        </div>
+
+        <div class="island-card" onclick="showSurprise(4)">
+            <div>⛵</div>
+            <h3>The sea</h3>
+            <p>A message for you...</p>
+        </div>
+
+        <div class="island-card" onclick="showSurprise(5)">
+            <div>🎹</div>
+            <h3>The music room</h3>
+            <p>Listen with your heart...</p>
+        </div>
+
+        <div class="island-card" onclick="showSurprise(6)">
+            <div>💌</div>
+            <h3>The treasure</h3>
+            <p>The biggest secret...</p>
+        </div>
+
+    </div>
+
+    <div class="surprise-message" id="surpriseMessage"></div>
+
+</section>
+
+
+<!-- FINAL LETTER -->
+
+<section class="final" id="letter">
+
+    <div class="section-heading">
+
+        <small>THE LAST CHAPTER</small>
+
+        <h2>A letter for you</h2>
+
+    </div>
+
+    <div class="letter">
+
+        <div style="font-size:35px;margin-bottom:20px;">💌</div>
+
+        <h2>To my favourite person...</h2>
+
+        <p id="finalLetter">
+            
+Hay lugares que son especiales por lo bonitos que son.
+
+Pero otros se vuelven especiales por las personas con las que los compartes.
+
+Y tú has conseguido que muchos momentos normales se conviertan en mis recuerdos favoritos.
+
+No sé cuántas aventuras nos quedan por vivir, cuántos lugares nos quedan por descubrir ni cuántas canciones nos quedan por cantar.
+
+Pero sí sé una cosa:
+
+Quiero seguir creando recuerdos contigo.
+
+Gracias por ser tú, por compartir tu vida conmigo y por hacer que nuestra pequeña historia sea tan bonita.
+
+Si tuviera que elegir una y mil veces, volvería a elegirte.
+
+            </p>
+
+        <div class="signature">
+            I love you. Always. ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div style="font-size:30px;">🇬🇷</div>
+
+    <p>
+        MADE WITH LOVE, JUST FOR YOU.
+    </p>
+
+    <p>
+        SOMEWHERE IN THE MEDITERRANEAN · FOREVER US
+    </p>
+
+    <span>♥</span>
+
+</footer>
+
+
+<script>
+
+/* OPEN INVITATION */
+
+function openInvitation() {
+
+    document.getElementById("intro").classList.add("hidden");
+
+    createHearts();
+
+}
+
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+
+    document.getElementById("navLinks").classList.toggle("active");
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+
+/* ISLAND SURPRISES */
+
+const surprises = {
+
+    1: "🏡 Si pudiera elegir cualquier lugar del mundo para estar, elegiría aquel en el que pudiera despertarme a tu lado.",
+
+    2: "🏖️ Quiero vivir contigo miles de atardeceres, escapadas improvisadas y días que no necesiten ningún plan.",
+
+    3: "🌺 Eres esa pequeña casualidad que terminó convirtiéndose en una de las cosas más bonitas de mi vida.",
+
+    4: "⛵ No importa lo grande que sea el mundo. Siempre encontraría el camino de vuelta a ti.",
+
+    5: "🎹 Si nuestra historia tuviera una banda sonora, sería mi favorita de todas.",
+
+    6: "💌 Mi mayor tesoro no está escondido en esta isla. Eres tú. Y espero que nunca lo olvides."
+
+};
+
+
+function showSurprise(number) {
+
+    const box = document.getElementById("surpriseMessage");
+
+    box.innerHTML = surprises[number];
+
+    box.classList.remove("show");
+
+    void box.offsetWidth;
+
+    box.classList.add("show");
+
+    box.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    createHearts();
+
+}
+
+
+/* FLOATING HEARTS */
+
+function createHearts() {
+
+    const emojis = ["💙", "🤍", "🌸", "💗", "✨"];
+
+    for (let i = 0; i < 12; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerHTML = emojis[
+            Math.floor(Math.random() * emojis.length)
+        ];
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.top = (50 + Math.random() * 40) + "vh";
+
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 3000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
